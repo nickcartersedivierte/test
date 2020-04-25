@@ -19,6 +19,18 @@ router.post('/add', async (req, res) =>{
     res.redirect('/');
 });
 
+router.get ('/update/:id', async (req, res) =>{
+ 
+    const { id } = req.params;
+    const task = await Task.findById(id);
+    res.render('update', {
+
+        task
+    });
+
+});
+
+
 router.get('/delete/:id', async (req, res) => {
 
     const { id } = req.params;

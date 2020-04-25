@@ -32,33 +32,7 @@
             </form>  
             </div>
 
-<div class="col-md-7">
-<table class="table table-bordered table-hover">
-   <thead>
-    <tr>
-    <th>N° </th>
-    <th>Title</th>
-    <th>description </th>
-    <th>Operations </th>
-    </tr>
-   </thead>
-   <tbody>
-    <%for (var i= 0; i < tasks.length; i++){ %>
-    <tr>
-    <td> <%= i + 1 %>  </td>
-    <td> <%= tasks[i].title %>  </td>
-    <td> <%= tasks[i].description %>  </td>
-    <td> 
-        
-        <a href = "/delete/<%= tasks[i]._id%> " class= "btn btn-danger">Delete<a>
-        <a href = "/update/<%= tasks[i]._id%>" class= "btn btn-info">Update<a>
-    </td>
-    </tr>
-   <% }%>
-   </tbody>
-  </table>
-</div>
-</div>
-</div>
-</body>
-</html>
+        </div>
+        </div>
+    </body>
+    </html>    
