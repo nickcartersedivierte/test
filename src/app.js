@@ -9,7 +9,7 @@ mongoose.connect('mongodb+srv://Anacct:ana@cluster0-mmo49.mongodb.net/test?retry
     useNewUrlParser: true,
     useUnifiedTopology:true
 })
-    .then(()=> console.log('DB is connected'))
+    .then(()=> console.log('Connected to the Database'))
     .catch(e => console.log(e));
 
 const indexRoutes = require('./routes/index');

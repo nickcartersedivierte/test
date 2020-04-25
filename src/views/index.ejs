@@ -16,17 +16,18 @@
 
 <body>
 
+<!--FORM-->
 <div class = "container">
     <div class ="row">
         <div class="col-md-5">
         <div class ="card">
             <div class ="card-body">
             <form action ="/add" method="POST">
-                <div class = "form-group">
-                    <input type="text" name="title" placeholder="Name" class="form-control">
-                </div>
             <div class = "form-group">
-                <textarea name="description" cols= "80" class="form-control" placeholder="description"> </textarea>
+             <input type="text" name="name" placeholder="Name" class="form-control">
+            </div>
+            <div class = "form-group">
+             <textarea name="description" cols= "80" class="form-control" placeholder="Instrument and Band"> </textarea>
             </div>
             <button type="submit" class= "btn btn-primary btn-block">Add</button>
             </form>  
@@ -37,21 +38,21 @@
    <thead>
     <tr>
     <th>N° </th>
-    <th>Title</th>
-    <th>description </th>
-    <th>Operations </th>
+    <th>Name</th>
+    <th>Instrument and Band </th>
+    <th>Actions </th>
     </tr>
    </thead>
    <tbody>
-    <%for (var i= 0; i < tasks.length; i++){ %>
+    <%for (var i= 0; i < musicians.length; i++){ %>
     <tr>
     <td> <%= i + 1 %>  </td>
-    <td> <%= tasks[i].title %>  </td>
-    <td> <%= tasks[i].description %>  </td>
+    <td> <%= musicians[i].name %>  </td>
+    <td> <%= musicians[i].description %>  </td>
     <td> 
         
-        <a href = "/delete/<%= tasks[i]._id%> " class= "btn btn-danger">Delete<a>
-        <a href = "/update/<%= tasks[i]._id%>" class= "btn btn-info">Update<a>
+        <a href = "/delete/<%= musicians[i]._id%> " class= "btn btn-danger">Delete<a>
+        <a href = "/edit/<%= musicians[i]._id %>" class= "btn btn-info">Update<a>
     </td>
     </tr>
    <% }%>
