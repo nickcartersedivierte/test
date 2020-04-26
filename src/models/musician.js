@@ -4,8 +4,7 @@ const Schema = mongoose.Schema;
 
 const MusicianSchema = new Schema( {
 
-name: String,
-instrument: String,
+name: { type: String, unique: true},
 description: String,
 
 });

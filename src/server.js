@@ -4,7 +4,7 @@ const morgan = require('morgan');
 const app = express();
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb+srv://Anacct:ana@cluster0-mmo49.mongodb.net/test?retryWrites=true&w=majority', {
+mongoose.connect(process.env.MONGO_URL, {
 
     useNewUrlParser: true,
     useUnifiedTopology:true
@@ -25,6 +25,10 @@ app.use('/' , indexRoutes);
 
 app.listen(app.get ('port'), ()=>{
 
+console.log("MongoDB: " + process.env.MONGODB_URL);
 console.log(`Server on port${app.get('port')}`);
 
 });
+
+
+
