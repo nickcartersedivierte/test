@@ -25,7 +25,7 @@ app.use('/' , indexRoutes);
 
 app.listen(app.get ('port'), ()=>{
 
-console.log("MongoDB: " + process.env.MONGODB_URL);
+console.log("MongoDB: " + process.env.MONGO_URL);
 console.log(`Server on port${app.get('port')}`);
 
 });
