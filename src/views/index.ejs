@@ -9,28 +9,29 @@
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 <nav class="navbar navbar-dark  bg-dark mb-4">
 
-<a href="/" class ="navbar-brand">FemMusic </a>
+<a href="/" class ="navbar-brand">FemMusic - A website for female musicians  </a>
 </nav>
 
 </head>
 
 <body>
+
 <!--REFERENCE FOR THIS EJS FILE: https://github.com/FaztWeb/express-mongodb-crud-->
 
 <!--FORM-->
 <div class = "container">
     <div class ="row">
         <div class="col-md-5">
-        <div class ="card">
+        <div class ="card bg-light">       
             <div class ="card-body">
             <form action ="/add" method="POST">
             <div class = "form-group">
              <input type="text" name="name" placeholder="Musician Name" class="form-control">
             </div>
             <div class = "form-group">
-             <textarea name="description" cols= "80" placeholder="Instrument and Band" class="form-control" >Instrument and Band </textarea>
+             <textarea name="description" cols= "80" placeholder="Instrument and Band" class="form-control" ></textarea>
             </div>
-            <button type="submit" class= "btn btn-primary btn-block">Add</button>
+            <button type="submit" class= "btn btn-success btn-block">Add</button>
             </form>  
             </div>
 
@@ -38,12 +39,12 @@
 
 <table class="table table-bordered table-hover">
    <thead>
-    <tr>
-    <th>N° </th>
-    <th>Name</th>
-    <th>Instrument and Band </th>
-    <th>Actions </th>
-    </tr>
+        <tr>
+            <th>N° </th>
+             <th>Name</th>
+             <th>Instrument and Band </th>
+             <th>Actions </th>
+        </tr>
    </thead>
    <tbody>
     <%for (var i= 0; i < musicians.length; i++){ %>
@@ -51,6 +52,7 @@
     <td> <%= i + 1 %>  </td>
     <td> <%= musicians[i].name %>  </td>
     <td> <%= musicians[i].description %>  </td>
+
     <td> 
         
         <a href = "/delete/<%= musicians[i]._id%> " class= "btn btn-danger">Delete<a>
@@ -64,4 +66,5 @@
 </div>
 </div>
 </body>
+
 </html>

@@ -3,35 +3,39 @@
 <html>
 <head>
 <meta charset= "utf-8">
-<title>FemMusic </title>
+<title>FemMusic  </title>
 
 <!--Bootstrap 4 cdn-->
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 <nav class="navbar navbar-dark  bg-dark mb-4">
 
-<a href="/" class ="navbar-brand">FemMusic </a>
+<a href="/" class ="navbar-brand">FemMusic - A website for female musicians  </a>
 </nav>
 
 </head>
 
 <body>
+
+
 <!--REFERENCE FOR THIS EJS FILE: https://github.com/FaztWeb/express-mongodb-crud-->
 
 <div class = "container">
     <div class ="row">
         <!--FORM-->
         <div class="col-md-5 offset md-3">
+        
+    
         <div class ="card">
             <div class ="card-body">
             <form action ="/edit/<%= musician._id %>" method="POST">
                 <div class = "form-group">
                     <input type="text" name="name" placeholder="Name" class="form-control" value = "<%= musician.name %>">
                 </div>
-            <div class = "form-group">
-                <textarea name="description" cols= "80" class="form-control" placeholder="Instrument and Band"><%= musician.description %>
-                </textarea>
-            </div>
-            <button type="submit" class= "btn btn-primary btn-block">update</button>
+                <div class = "form-group">
+                    <textarea name="description" cols= "80" class="form-control" placeholder="Description"><%= musician.description %>
+                    </textarea>
+                </div>
+            <button type="submit" class= "btn btn-success btn-block">update</button>
             </form>  
             </div>
         </div>
