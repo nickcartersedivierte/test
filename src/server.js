@@ -3,9 +3,11 @@ const express = require ('express');
 const morgan = require('morgan');
 const app = express();
 const mongoose = require('mongoose');
-require('dotenv').config();
+const dotenv = require("dotenv");
 
-mongoose.connect(process.env.MONGO_URL, {
+dotenv.config();
+
+mongoose.connect('process.env.MONGO_URL', {
 
     useNewUrlParser: true,
     useUnifiedTopology:true
