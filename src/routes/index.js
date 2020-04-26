@@ -12,10 +12,10 @@ router.get('/', async (req, res) =>{
 });
 });
 
-router.post('/add', async (req, res) =>{
+router.post('/add', (req, res) =>{
     
     const musician = new Musician(req.body);
-    await musician.save();
+     musician.save();
     res.redirect('/');
 });
 
@@ -50,5 +50,3 @@ router.get('/delete/:id', async (req, res) => {
 
 
 module.exports = router;
-
-

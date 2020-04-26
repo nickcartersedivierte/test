@@ -3,11 +3,8 @@ const express = require ('express');
 const morgan = require('morgan');
 const app = express();
 const mongoose = require('mongoose');
-const dotenv = require("dotenv");
 
-dotenv.config();
-
-mongoose.connect('process.env.MONGO_URL', {
+mongoose.connect('mongodb+srv://Anacct:ana@cluster0-mmo49.mongodb.net/test?retryWrites=true&w=majority', {
 
     useNewUrlParser: true,
     useUnifiedTopology:true
@@ -28,10 +25,6 @@ app.use('/' , indexRoutes);
 
 app.listen(app.get ('port'), ()=>{
 
-console.log("MongoDB: " + process.env.MONGO_URL);
 console.log(`Server on port${app.get('port')}`);
 
 });
-
-
-
